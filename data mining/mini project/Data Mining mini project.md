@@ -42,8 +42,28 @@
 
 ### (2)
 
+其中 glucose_concentration、blood_pressure、skin_fold_thickness、serum_insulin、BMI、diabetes pedigree 不應為0，所以需要用前處理將為 0 的視為 missing data 改掉，而我選擇使用平均值取代。
+
+![image-20221129175610892](C:\Users\w96j0\AppData\Roaming\Typora\typora-user-images\image-20221129175610892.png)
+
+為了避免極值造成訓練模型過於偏差，將所有的資料標準化。
+
+![image-20221129175620724](C:\Users\w96j0\AppData\Roaming\Typora\typora-user-images\image-20221129175620724.png)
+
+由於每項可能都跟糖尿病有關，使用 id 以外的所有特徵
+
 ### (3)
+
+使用 KNN ，在面對這種數量級的資料時，不會需要太多的執行時間，也能有不錯的預測結果
 
 ### (4)
 
+總共調整了三次 KNN 的 n-neighbors，分別為 1, 2, 3 其中以 3 的表現最好。
+
+![image-20221129180014639](C:\Users\w96j0\AppData\Roaming\Typora\typora-user-images\image-20221129180014639.png)
+
 ### (5)
+
+![image-20221129180254575](C:\Users\w96j0\AppData\Roaming\Typora\typora-user-images\image-20221129180254575.png)
+
+由上而下分別為 n-neighbors 為 1, 3, 2 時的結果表現
